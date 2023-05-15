@@ -4,8 +4,13 @@ import axios from "axios";
 const BASE_URL = "https://api.github.com/users/";
 
 export const getUser = createAsyncThunk("getUser", async (searchValue) => {
-  const { data } = await axios.get(`${BASE_URL}${searchValue}`);
-  return data;
+  try {
+    const res = await axios.get(`${BASE_URL}${searchValue}`);
+    const data = res.data;
+    return data;
+  } catch (error) {
+    throw new Error(`${searchValue} is not a valid username`);
+  }
 });
 
 export const profileSlice = createSlice({

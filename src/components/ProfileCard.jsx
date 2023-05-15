@@ -24,16 +24,16 @@ const ProfileCard = ({ user }) => {
               />
               <div className="text-white">
                 <h1 className="text-lg sm:text-2xl mb-1 font-semibold text-black dark:text-white">
-                  {user.name}
+                  {user?.name}
                 </h1>
                 <p className="text-sm text-icon mb-4">@{user?.login}</p>
                 <p className="hidden font-medium text-sm text-alt dark:text-darkAlt sm:block">
-                  {user?.bio === null ? "This profile has no bio" : user.bio}
+                  {user?.bio === null ? "This profile has no bio" : user?.bio}
                 </p>
               </div>
             </div>
             <p className="my-5 font-medium text-sm text-alt dark:text-darkAlt sm:hidden">
-              {user?.bio === null ? "This profile has no bio" : user.bio}
+              {user?.bio === null ? "This profile has no bio" : user?.bio}
             </p>
             <div className="py-3 mt-4 flex gap-4 justify-center items-center bg-light text-white text-center rounded-lg dark:bg-darkContainer sm:text-left sm:w-[71%] sm:ml-auto sm:pl-8 sm:pr-12 sm:justify-between sm:gap-0">
               <div>
@@ -61,7 +61,7 @@ const ProfileCard = ({ user }) => {
                 </h2>
               </div>
             </div>
-            <div className="py-3 sm:flex gap-6 text-white rounded-lg sm:w-[71%] sm:ml-auto sm:pr-12">
+            <div className="py-3 sm:flex gap-10 text-white rounded-lg sm:w-[71%] sm:ml-auto sm:pr-12">
               <div className="sm:w-1/2 sm:flex flex-col mt-4 gap-5">
                 <div className="flex items-center gap-3 mb-4 sm:mb-0">
                   <span>
@@ -81,7 +81,7 @@ const ProfileCard = ({ user }) => {
                         : "text-primary dark:text-white"
                     }`}
                   >
-                    {user?.location === null ? "Not available" : user.location}
+                    {user?.location === null ? "Not available" : user?.location}
                   </span>
                 </div>
                 <div className="flex items-center gap-3 mb-3 sm:mb-0">
@@ -103,7 +103,7 @@ const ProfileCard = ({ user }) => {
                         : "text-primary dark:text-white"
                     }`}
                   >
-                    {user?.html_url === null ? "Not available" : user.html_url}
+                    {user?.html_url === null ? "Not available" : user?.html_url}
                   </a>
                 </div>
               </div>
@@ -128,7 +128,7 @@ const ProfileCard = ({ user }) => {
                   >
                     {user?.twitter_username === null
                       ? "Not available"
-                      : user.twitter_username}
+                      : user?.twitter_username}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -136,7 +136,7 @@ const ProfileCard = ({ user }) => {
                     <BsBuildingsFill
                       size={20}
                       className={`${
-                        user.company === null
+                        user?.company === null
                           ? "text-gray-400"
                           : "text-primary dark:text-white"
                       }`}
@@ -144,12 +144,12 @@ const ProfileCard = ({ user }) => {
                   </span>
                   <span
                     className={`text-sm whitespace-nowrap ${
-                      user.company === null
+                      user?.company === null
                         ? "text-gray-400"
                         : "text-primary dark:text-white"
                     }`}
                   >
-                    {user?.company === null ? "Not available" : user.company}
+                    {user?.company === null ? "Not available" : user?.company}
                   </span>
                 </div>
               </div>
