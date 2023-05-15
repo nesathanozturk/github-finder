@@ -5,6 +5,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#141C30] flex justify-center items-center h-screen;
   font-family: "Space Mono", monospace;
 }
