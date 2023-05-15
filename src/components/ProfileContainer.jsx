@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Result from "./Result";
 import Input from "./Input";
 
 const ProfileContainer = () => {
@@ -6,6 +7,7 @@ const ProfileContainer = () => {
     <div className="w-[600px]">
       <Header />
       <Input />
+      <Result />
     </div>
   );
 };
