@@ -1,15 +1,25 @@
 import { FiSearch } from "react-icons/fi";
 
-const Input = () => {
+const Input = ({
+  searchValue,
+  setSearchValue,
+  handleSearchValue,
+  handleSubmit,
+}) => {
   return (
-    <form className="flex justify-center items-center relative mt-7">
-      <span className="absolute top-5 left-2">
+    <form
+      onSubmit={handleSubmit}
+      className="flex justify-center items-center relative mt-7"
+    >
+      <span className="absolute top-5 left-4">
         <FiSearch size={25} className="text-icon" />
       </span>
       <input
         type="text"
         placeholder="Search Github username..."
-        className="w-full py-5 pl-10 bg-input rounded-xl border-none font-normal text-white focus:outline-none shadow-md"
+        className="w-full py-5 pl-14 bg-input rounded-xl border-none font-normal text-white focus:outline-none shadow-xl"
+        value={searchValue}
+        onChange={handleSearchValue}
       />
       <button
         type="submit"

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        icon: "#3063AD",
+        icon: "#0273F2",
         input: "#1E2847",
         btn: "#0079ff",
         btnHover: "#60abff",

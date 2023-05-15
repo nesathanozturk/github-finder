@@ -1,11 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "https://api.github.com/users";
+const BASE_URL = "https://api.github.com/users/";
 
 export const getUser = createAsyncThunk("getUser", async (searchValue) => {
-  const res = await axios.get(`${BASE_URL}${searchValue}`);
-  const data = await res.data;
+  const { data } = await axios.get(`${BASE_URL}${searchValue}`);
   return data;
 });
 
@@ -22,17 +21,21 @@ export const profileSlice = createSlice({
       state.searchValue = action.payload;
     },
   },
+
   extraReducers: (builder) => {
     builder.addCase(getUser.pending, (state, action) => {
       state.loading = true;
+      state.error = "";
     });
+
     builder.addCase(getUser.fulfilled, (state, action) => {
       state.users = action.payload;
       state.loading = false;
     });
+
     builder.addCase(getUser.rejected, (state, action) => {
       state.loading = false;
-      state.error = action.error.message;
+      state.error = "Something went wrong!";
     });
   },
 });
