@@ -2,9 +2,9 @@ import ProfileContainer from "./components/ProfileContainer";
 
 const App = () => {
   return (
-    <>
+    <div>
       <ProfileContainer />
-    </>
+    </div>
   );
 };
 
